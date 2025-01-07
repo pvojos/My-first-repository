@@ -1,0 +1,515 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.index__header, .galleries__header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(223 207 250);
+    padding: 15px;
+    min-height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.index__header__logo, .galleries__header__logo {
+    width: 300px;
+}
+
+.index__header__menu, .galleries__header__menu {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 400;
+}
+
+.index__header__menu a, .galleries__header__menu a {
+    font-size: clamp(0.7rem, 0.9vw, 1.5rem);
+    color: rgb(38, 0, 61);
+    text-decoration: none;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.index__link--active, .galleries__link--active {
+    font-weight: 700;
+}
+
+.index__user-bar, .galleries__user-bar {
+    width: 300px;
+}
+
+.index__content {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+    gap: 15px;
+    grid-template-areas: 
+        "artist artist sidebar"
+        "works works sidebar";
+    box-sizing: border-box;
+}
+
+.index__artists-of-the-month {
+    grid-area: artist;
+}
+
+.index__content h1, .galleries__content h1 {
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5px;
+    text-shadow: 2px 1px 1px rgb(198, 198, 198);
+    width: 100%;
+}
+
+.index__content h2, .galleries__content h2 {
+    font-size: clamp(0.84rem, 1vw, 1.6rem);
+    font-weight: 500;
+    text-align: center;
+    margin: 2px;
+}
+
+.index__content, .galleries__content {
+    margin-top: 140px;
+}
+
+.index__content__artists-of-the-month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2vw;
+}
+
+.index__content__artists-of-the-month div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(176, 176, 176);
+    border-radius: 15px;
+    padding: 12px;
+}
+
+.index__content__artists-of-the-month h3 {
+    font-size: clamp(0.7rem, 0.9vw, 1.5rem);
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    word-spacing: 1px;
+}
+
+.index__content__artists-of-the-month img {
+    max-width: 20vw;
+    border-radius: 10px;
+}
+
+hr {
+    margin: 30px 30px 30px 30px;
+}
+
+.index__outstanding-works {
+    grid-area: works;
+}
+
+.index__content__outstanding-works {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2vw;
+    margin-bottom: 30px;
+}
+
+.index__content__outstanding-works img {
+    width: 13vw;
+    border-radius: 10px;
+}
+
+.index__sidebar {
+    grid-area: sidebar;
+    border-left: 2px solid #b0b0b0;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.index__sidebar p {
+    color: rgb(38, 0, 61);
+    font-weight: 700;
+    margin: 0 40px;
+    margin-top: 25px;
+    text-align: center;
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    line-height: 20px;
+}
+
+.index__subscription-button {
+    cursor: pointer;
+    margin: 20px 60px;
+    background-color: rgb(18, 121, 87);
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.84rem, 1vw, 1.6rem);
+    border: 0;
+}
+
+.index__modal-subscription {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(83, 83, 83, 0.8);
+	z-index: 99999;
+    opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.index__modal-subscription:target {
+	opacity:1;
+	pointer-events: auto;
+}
+.index__modal-subscription > div:first-child {
+	width: 500px;
+	position: relative;
+	margin: 10% auto;
+	padding: 25px 25px 50px 25px;
+	border-radius: 20px;
+	background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+	align-self: flex-end;
+	text-decoration: none;
+	color: rgb(89, 89, 89);
+    font-weight: 400;
+}
+
+.index__modal-subscription h2 {
+    font-size: clamp(1rem, 1.2vw, 2rem);
+    color: rgb(38, 0, 61);
+    text-align: center;
+}
+
+.index__modal-subscription label, input[type=text] {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    width: 100%;
+    display: flex;
+    font-size: clamp(0.84rem, 1vw, 1.6rem)
+}
+
+.subscription-form-input {
+    margin-bottom: 15px;
+    width: 400px;
+}
+
+.index__modal-subscription input[type=submit] {
+    display: block;
+    margin: 40px auto auto auto;
+    background-color: rgb(18, 121, 87);
+    color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: clamp(0.84rem, 1vw, 1.6rem);
+    width: 200px;
+}
+
+.index__footer, .galleries__footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(38, 0, 61);
+    gap: 25px;
+    padding: 15px;
+    min-height: 100px;
+}
+
+.index__footer__logo, .galleries__footer__logo {
+    width: 100px;
+}
+
+.index__footer__menu, .galleries__footer__menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.index__footer__menu a, .galleries__footer__menu a {
+    font-size: clamp(0.7rem, 0.9vw, 1.5rem);
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(223 207 250);
+    display: table;
+}
+
+.index__footer__social-media, .galleries__footer__social-media {
+    width: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-right: 5px;
+}
+
+.index__footer__social-media img, .galleries__footer__social-media img {
+    width: 20px;
+}
+
+
+
+
+
+
+.galleries {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    width: 100%;
+    gap: 15px;
+    grid-template-areas: 
+        "header header header"
+        "content content content"
+        "content content content"
+        "footer footer footer";
+    box-sizing: border-box;
+}
+
+.galleries__content__artists-galleries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2vw;
+    margin-bottom: 40px;
+}
+
+.galleries__content__artists-galleries div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+    border-radius: 15px;
+    padding: 12px;
+    box-shadow: 5px 5px 5px 0px rgb(211, 211, 211);
+}
+
+.galleries__content__artists-galleries h2 {
+    font-size: clamp(0.84rem, 1vw, 1.6rem);
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.galleries__content__artists-galleries img {
+    max-width: 20vw;
+    min-width: 300px;
+    border-radius: 10px;
+}
+
+.galleries__content__artists-galleries-button {
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 25px;
+    color: rgb(18, 121, 87);
+    padding: 5px 15px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.84rem, 1vw, 1.6rem);
+    border: 2px solid rgb(18, 121, 87);
+    background-color: rgb(233, 233, 233);
+}
+
+
+
+@media screen and (max-width:50em) {
+    
+    .index__content {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "artist"
+            "works"
+            "sidebar";
+        gap: 0px;
+    }
+
+    .index__header, .galleries__header {
+        flex-direction: column;
+    }
+
+    .index__header__logo, .galleries__header__logo {
+        width: 180px;
+        align-self: center;
+    }
+
+    
+    .index__header__menu, .galleries__header__menu {
+        gap: 2px;
+    }
+
+    .index__user-bar, .galleries__user-bar {
+        width: 0;
+    }
+
+    .index__content, .galleries__content {
+        margin-top: 155px;
+    }
+
+    .index__content__artists-of-the-month,  .index__content__outstanding-works {
+        flex-direction: column;
+    }
+
+    .index__content__artists-of-the-month img {
+        max-width: 300px;
+    }
+
+    hr {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .index__content__outstanding-works img {
+        width: 324px;
+    }
+
+    .index__sidebar {
+        margin: 0;
+        padding: 20px 0 5px 0;
+        background-color: rgb(221, 221, 221);
+    }
+    
+    .index__subscription-button {
+        margin: 20px 100px;
+    }
+
+    .index__modal-subscription > div:first-child {
+        width: 70%;
+        padding: 15px 15px 35px 5px;
+    }
+
+    .subscription-form-input {
+        width: 100%;
+        margin: 0;
+    }
+
+    .index__modal-subscription h2 {
+        width: 60%;
+    }
+
+    .index__modal-subscription label, input[type=text] {
+        justify-content: center;
+        min-width: 50vw;
+    }
+
+    .index__footer, .galleries__footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .index__footer__logo, .galleries__footer__logo {
+        width: 80px;
+    }
+
+    .index__footer__menu, .galleries__footer__menu {
+        align-items: center;
+    }
+
+    .index__footer__social-media, .galleries__footer__social-media {
+        justify-content: center;
+        margin-right: 0;
+    }
+
+
+
+    .galleries__content__artists-galleries img {
+        max-width: 75vw;
+    }
+}
+
+@media (hover: hover) {
+    .index__header__menu a:hover, .galleries__header__menu a:hover {
+        color: rgb(18, 121, 87);
+    }
+
+    .index__subscription-button:hover {
+        background-color: rgb(38, 0, 61);
+    }
+
+    .index__modal-subscription input[type=submit]:hover {
+        background-color: rgb(38, 0, 61);
+    }
+
+    .galleries__content__artists-galleries-button:hover {
+        color: rgb(38, 0, 61);
+        border: 2px solid rgb(38, 0, 61);
+    }
+}
+
+/*@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(52, 49, 54);
+        color: rgb(223 207 250);
+    }
+
+    .index__content h1, .galleries__content h1 {
+        text-shadow: none;
+    }
+
+    .index__header, .galleries__header {
+        background-color: rgb(191, 177, 214);
+    }
+
+    .index__sidebar>p:first-child {
+        color: rgb(223 207 250);
+    }
+
+    .index__subscription-button {
+        background-color: rgb(15, 98, 84);
+    }
+
+    .index__footer, .galleries__footer {
+        background-color: rgb(17, 0, 28);
+    }
+
+    .galleries__content__artists-galleries div {
+        background-color: rgb(191, 177, 214);
+        box-shadow: 5px 5px 5px 0px rgb(28, 26, 30);
+    }
+
+    .galleries__content__artists-galleries h2 {
+        color: rgb(17, 0, 28);
+    }
+    
+    .galleries__content__artists-galleries-button {
+        color: rgb(15, 98, 84);
+        border: 2px solid rgb(15, 98, 84);
+        background-color: rgb(191, 177, 214);
+    }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Disfruta de una recopilación de las obras, artistas plásticos y digitales del momento.">
+    <meta property="og:title" content="Galería de Arte en línea">
+    <meta property="og:image" content="img/social-media-cover.png">
+    <meta property="og:description" content="Disfruta de una recopilación de las obras, artistas plásticos y digitales del momento.">
+    <meta property="og:url" content="www.oa.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title lang="en">OA | Galería de Arte en línea</title>
+</head>
+<body>
+    <header class="index__header" role="banner">
+        <img class="index__header__logo" src="svg/logo-oa.svg" alt="Logo de Online Art Gallery">
+        <nav class="index__header__menu">
+            <a class="index__link--active" href="index.html">Inicio</a>
+            <a href="galerias.html">Galerías</a>
+            <a href="index.html">Blog</a>
+            <a href="index.html">Comparte tu obra</a>
+        </nav>
+        <div class="index__user-bar"></div>
+    </header>
+    
+    <main class="index__content">
+        <article class="index__artists-of-the-month">
+            <h1>Artistas del mes</h1>
+            <section class="index__content__artists-of-the-month">
+                <div>
+                    <img src="img/aykut-aydogdu.jpg" alt="Fotografía de Aykut Aydogdu artista digital">
+                    <h2 lang="tr">Aykut Aydoğdu</h2>
+                    <h3>Estambul, Turquía</h3>
+                </div>
+                <div>
+                    <img src="img/max-loffler.jpg" alt="Fotografía de Max Löffler artista digital">
+                    <h2 lang="de">Max Löffler</h2>
+                    <h3>Aschaffenburg, Alemania</h3>
+                </div>
+                <div>
+                    <img src="img/ruo-hsin-wu.jpg" alt="Fotografía de Ruo Hsin Wu artista plástica">
+                    <h2 lang="zh">吳若昕</h2>
+                    <h3>Londres, Inglaterra</h3>
+                </div>
+            </section>
+        </article>
+        
+        <article class="index__outstanding-works">
+            <hr>
+            <h1>Obras destacadas del mes</h1>
+            <section class="index__content__outstanding-works">
+                <div>
+                    <h2 lang="en">Born from Sea</h2>
+                    <a href="https://www.instagram.com/p/C1Z1awmPpWr/?img_index=1" rel="nofollow">
+                        <img src="img/born-from-sea-yimeng-yu.jpg" alt="Obra Born from Sea por Yimeng Yu" role="link">
+                    </a>
+                </div>
+                <div>
+                    <h2 lang="en">Meguri</h2>
+                    <a href="https://www.instagram.com/p/ChKieXqusc1/?hl=es&img_index=1" rel="nofollow">
+                        <img src="img/meguri-shoko-ishida.jpg" alt="Obra Meguri por Shoko Ishida" role="link">
+                    </a>
+                </div>
+                <div>
+                    <h2 lang="en">Sunny day</h2>
+                    <a href="https://www.instagram.com/p/CxpEfAarYsm/?hl=es" rel="nofollow">
+                        <img src="img/sunny-day-felicia-chiao.jpg" alt="Obra Sunny day por Felicia Chiao" role="link">
+                    </a>
+                </div>
+                <div>
+                    <h2 lang="en">East of the Sun</h2>
+                    <a href="https://www.instagram.com/p/C1TC59DNZZ1/" rel="nofollow">
+                        <img src="img/east-of-the-sun-forest-rogers.jpg" alt="Obra East of the Sun por Forest Rogers" role="link">
+                    </a>
+                </div>
+                <div>
+                    <h2 lang="en">Sailboat</h2>
+                    <a href="https://www.instagram.com/p/Czg2lGeKen5/?hl=es" rel="nofollow">
+                        <img src="img/sailboat-aykut-aydogdu.jpg" alt="Obra Sailboat por Aykut Aydogdu" role="link">
+                    </a>
+                </div>
+            </section>
+        </article>
+
+        <article class="index__sidebar">
+            <section>
+                <p>¡Suscríbete a nuestro <span lang="en">Newsletter!</span></p>
+                <a href="#open-modal">
+                    <button class="index__subscription-button">Quiero suscribirme</button>
+                </a>
+            </section>
+
+            <section id="open-modal" class="index__modal-subscription">
+                <div>
+                    <a href="#close" title="close" class="close" aria-label="Cerrar ventana para suscripción">X</a>
+                    <h2>Ingresa tu información para suscribirte</h2>
+                    <form>
+                        <div class="subscription-form-input">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" placeholder="Ingresa tu nombre completo">
+                        </div>
+                        <div class="subscription-form-input">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email" placeholder="Ingresa tu email">
+                        </div>
+                        <input type="submit" value="Suscribirme" aria-label="Suscribirse al Newsletter">  
+                    </form> 
+                </div>
+            </section>
+        </article>
+    </main>
+    
+    <footer class="index__footer">
+        <img class="index__footer__logo" src="svg/isotipo-oa.svg" alt="Isotipo de Online Art Gallery">
+        <nav class="index__footer__menu">
+            <a href="index.html">Inicio</a>
+            <a href="galerias.html">Galerías</a>
+            <a href="index.html">Blog</a>
+            <a href="index.html">Comparte tu obra</a>
+        </nav>
+        <section class="index__footer__social-media">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="img/ig-icon.png" alt="Cuenta de Instagram de Online Art Gallery" role="link">
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer nofollow">
+                <img src="img/fb-icon.png" alt="Cuenta de Facebook de Online Art Gallery" role="link">
+            </a>
+        </section>
+    </footer>
+</body>
+</html>
