@@ -237,6 +237,20 @@ hr {
     width: 200px;
 }
 
+.git-change div {
+    background-color: rgb(177, 35, 35);
+    width: 180px;
+    border-radius: 20px;
+}
+
+.git-change p {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0;
+    padding: 15px;
+}
+
 .index__footer, .galleries__footer {
     grid-area: footer;
     display: flex;
